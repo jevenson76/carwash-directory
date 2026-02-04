@@ -132,6 +132,80 @@
             animation: fadeIn 1s ease 1.2s forwards;
         }
 
+        /* Email contact section */
+        .contact-section {
+            margin-top: 3rem;
+            opacity: 0;
+            animation: fadeIn 1s ease 1.5s forwards;
+        }
+
+        .contact-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #8a8a9a;
+            margin-bottom: 0.75rem;
+        }
+
+        .email-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 2.5rem;
+            background: rgba(33, 150, 243, 0.15);
+            border: 2px solid #2196f3;
+            border-radius: 12px;
+            color: #64b5f6;
+            text-decoration: none;
+            font-size: 1.125rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .email-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(33, 150, 243, 0.3), rgba(100, 181, 246, 0.3));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .email-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(33, 150, 243, 0.4);
+            border-color: #64b5f6;
+            color: #ffffff;
+        }
+
+        .email-link:hover::before {
+            opacity: 1;
+        }
+
+        .email-icon {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .email-link:hover .email-icon {
+            transform: scale(1.1);
+        }
+
+        .email-text {
+            position: relative;
+            z-index: 1;
+        }
+
         .pulse-dot {
             width: 10px;
             height: 10px;
@@ -205,12 +279,24 @@
             <span class="pulse-dot"></span>
             <span>Launching Soon</span>
         </div>
+
+        <div class="contact-section">
+            <p class="contact-label">Get in Touch</p>
+            <a href="mailto:info@carwashwizard.com" class="email-link">
+                <svg class="email-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                <span class="email-text">info@carwashwizard.com</span>
+            </a>
+        </div>
     </div>
 
     <footer>
         &copy; 2026 Wizard Tech LLC
         <a href="/privacy.html">Privacy</a>
         <a href="/terms.html">Terms</a>
+        <a href="mailto:info@carwashwizard.com">Contact</a>
     </footer>
 </body>
 </html>
